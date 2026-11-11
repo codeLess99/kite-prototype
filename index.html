@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kite by MCheck · Prototype</title>
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#031335;--blue:#2A6AF1;--purple:#7034EA;--aqua:#1BBCE4;--orange:#EC700A;--red:#DC2626;--green:#16A34A;--bg:#F5F6FA;--tint:#ECF2FE;--t1:#29303D;--t2:#465167;--t3:#5A6884;--line:#EAECF2}
+*{box-sizing:border-box;margin:0}body{font-family:Satoshi,Arial,sans-serif;color:var(--t1);background:var(--bg)}
+header{background:var(--navy);color:#fff;padding:12px 24px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.logo{font-weight:700;font-size:20px}.logo span{color:var(--aqua)}.syn{background:var(--orange);font-size:11px;padding:3px 8px;border-radius:20px;font-weight:700}
+nav{margin-left:auto;display:flex;gap:6px}nav button{background:transparent;color:#A9C2F9;border:1px solid #2a3a66;padding:8px 14px;border-radius:8px;cursor:pointer;font:inherit}
+nav button.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+main{max-width:1180px;margin:0 auto;padding:20px}.hide{display:none}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:16px}
+.eyebrow{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--blue);text-transform:uppercase}
+h2{font-size:22px;margin:4px 0 12px;color:var(--navy)}h3{font-size:16px;color:var(--navy)}
+.btn{background:var(--blue);color:#fff;border:0;border-radius:8px;padding:9px 14px;font:inherit;font-weight:500;cursor:pointer}
+.btn.ghost{background:#fff;color:var(--blue);border:1px solid var(--blue)}.btn.red{background:var(--red)}.btn.sm{padding:6px 10px;font-size:13px}
+.muted{color:var(--t3);font-size:13px}.pill{display:inline-block;font-size:11px;font-weight:700;padding:3px 8px;border-radius:20px}
+.p-ok{background:#DCFCE7;color:#166534}.p-warn{background:#FFEDD5;color:#9A3412}.p-bad{background:#FEE2E2;color:#991B1B}.p-info{background:var(--tint);color:var(--blue)}
+.kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:16px}.kpi .v{font-size:28px;font-weight:700;color:var(--navy)}
+.grid2{display:grid;grid-template-columns:1.4fr 1fr;gap:16px}
+table{width:100%;border-collapse:collapse;font-size:14px}th{text-align:left;color:var(--t3);font-weight:500;font-size:12px;padding:8px;border-bottom:1px solid var(--line)}td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+.bar{height:6px;background:var(--line);border-radius:4px;overflow:hidden;margin-top:4px}.bar i{display:block;height:100%}
+.phone{max-width:400px;margin:0 auto;background:#fff;border-radius:24px;border:8px solid var(--navy);overflow:hidden}
+.ph-h{background:var(--blue);color:#fff;padding:14px 16px}.ph-b{padding:14px;max-height:620px;overflow:auto}
+.prov{border:1px solid var(--line);border-radius:10px;padding:12px;margin-bottom:10px}.prov.flag{border-color:var(--orange);background:#FFF7F0}
+.q{font-size:14px;margin:8px 0 6px}input,select{font:inherit;padding:8px;border:1px solid var(--line);border-radius:8px;width:100%;margin:4px 0}
+.msg{border-radius:8px;padding:8px 10px;font-size:13px;margin-top:8px}.ok{background:#DCFCE7;color:#166534}.err{background:#FEE2E2;color:#991B1B}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.split{display:grid;grid-template-columns:420px 1fr;gap:20px}
+.log{font-size:12px;max-height:220px;overflow:auto}.log div{padding:5px 0;border-bottom:1px dashed var(--line)}
+.r3{font-size:11px;color:var(--t3)}
+@media(max-width:900px){.kpis{grid-template-columns:repeat(2,1fr)}.grid2,.split{grid-template-columns:1fr}}
+</style></head><body>
+<header><div class="logo">Kite <span>by MCheck®</span></div><span class="syn">SYNTHETIC DATA · DEMO</span>
+<nav><button id="t-story" class="on" onclick="tab('story')">1 · How it works</button><button id="t-prov" onclick="tab('prov')">2 · Provider office</button><button id="t-plan" onclick="tab('plan')">3 · Health plan ops</button></nav></header>
+<main>
+<section id="story">
+ <div class="eyebrow">AI proposes, provider confirms</div><h2>Fixing Provider Data Before It Breaks</h2>
+ <div class="kpis" style="grid-template-columns:repeat(4,1fr)">
+  <div class="card"><h3>1. Detect</h3><p class="muted">Claims, NPPES and licence signals show a likely change (Directory Accuracy monitoring).</p></div>
+  <div class="card"><h3>2. Ask once</h3><p class="muted">Office gets one plan-branded magic link. No login, pre-filled from HiPr.</p></div>
+  <div class="card"><h3>3. Validate</h3><p class="muted">R3 scores the reply instantly. Plain-language fix if something's wrong.</p></div>
+  <div class="card"><h3>4. Close the loop</h3><p class="muted">Above threshold → auto-approved to FACETS/QNXT in &lt;48h. Removals always get a human.</p></div>
+ </div>
+ <div class="card"><h3>Try the demo in 60 seconds</h3><ol class="muted" style="margin:8px 0 12px 18px;line-height:1.9">
+  <li>Go to <b>Health plan ops</b> → click <b>Trigger a change</b> (a claims signal flags a new address).</li>
+  <li>Open <b>Provider office</b> → confirm or fix the flagged provider (try an invalid NPI to see validation).</li>
+  <li>Back in <b>Health plan ops</b> → see it auto-approved or waiting for review, the audit log, and the accuracy score move.</li></ol>
+  <button class="btn" onclick="tab('plan')">Start as health plan →</button></div>
+</section>
+
+<section id="prov" class="hide"><div class="split">
+ <div class="phone"><div class="ph-h"><div style="font-size:12px;opacity:.85">From: Northwind Health Plan · powered by MCheck</div><b id="ph-title">Check your practice listing</b><div style="font-size:12px;opacity:.85">Secure link · expires in 7 days · no login needed</div></div>
+  <div class="ph-b"><select id="practice" onchange="renderProv()"></select><div class="muted" id="prac-sub"></div><div id="cards"></div>
+   <div class="prov"><b>+ Add a provider</b><input id="n-name" placeholder="Full name, e.g. Dr. Ana Ruiz"><input id="n-npi" placeholder="NPI (10 digits)"><input id="n-addr" placeholder="Practice address"><button class="btn sm" onclick="addProv()">Submit</button><div id="add-msg"></div></div>
+   <div class="prov"><b>Your request status</b><div id="tracker" class="log"></div></div></div></div>
+ <div><div class="eyebrow">Provider view</div><h2>Confirm, Don't Type</h2>
+  <div class="card"><p class="muted" style="line-height:1.7">The office only answers questions MCheck isn't sure about. Everything else is already filled in. Each answer is checked on the spot (NPI check digit, licence status, address), and the office sees exactly where their update went.</p>
+  <table style="margin-top:12px"><tr><th>Traditional</th><th>Kite</th></tr>
+  <tr><td>Re-type the roster into ~20 plan portals</td><td>✓ Confirm once, synced to every MCheck plan</td></tr>
+  <tr><td>Blank forms, every 90 days</td><td>✓ Pre-filled; asked only when something changed</td></tr>
+  <tr><td>Weeks of silence after submitting</td><td>✓ Instant check + live status tracker</td></tr></table></div></div>
+</div></section>
+
+<section id="plan" class="hide">
+ <div class="row" style="justify-content:space-between"><div><div class="eyebrow">Health plan ops · Northwind Health Plan</div><h2>Executive Dashboard</h2></div>
+  <div class="row"><button class="btn" onclick="trigger()">⚡ Trigger a change</button><button class="btn ghost" onclick="sevenDays()">⏱ Simulate 7 days, no reply</button><button class="btn ghost" onclick="exportCSV()">⬇ Export audit</button></div></div>
+ <div class="kpis" id="kpis"></div>
+ <div class="grid2"><div class="card"><div class="row" style="justify-content:space-between"><h3>Review queue</h3>
+   <label class="muted">Auto-approve threshold (plan-set): <b id="thv">85</b>%<input type="range" min="60" max="99" value="85" id="th" oninput="thv.textContent=this.value;renderPlan()" style="width:160px"></label></div>
+   <p class="muted">R3 = Reliability · Recency · Relevance. Above threshold → auto-approved. Below threshold, and <b>every removal</b> → human review.</p>
+   <table><thead><tr><th>Provider</th><th>Change</th><th>R3 confidence</th><th>Status</th><th></th></tr></thead><tbody id="queue"></tbody></table></div>
+  <div><div class="card" style="margin-bottom:16px"><h3>Directory accuracy by market</h3><div id="acc"></div></div>
+   <div class="card"><h3>Audit log</h3><div class="log" id="audit"></div></div></div></div>
+</section></main>
+<script>
+const P=[{id:"A",name:"Lakeview Family Medicine",tin:"TIN ••4821 · Austin, TX · 6 providers",mk:"Austin"},{id:"B",name:"Harbor Behavioral Health",tin:"TIN ••7730 · Tampa, FL · 4 providers",mk:"Tampa"},{id:"C",name:"Summit Ortho Group",tin:"TIN ••1194 · Dallas, TX · 5 providers",mk:"Dallas"}];
+const nm=["Dr. Priya Shah","Dr. Mark Chen","Dr. Elena Ortiz","Dr. James Okafor","Dr. Sara Lind","Dr. Omar Haddad","Dr. Lisa Park","Dr. Tom Reyes","Dr. Nina Patel","Dr. Ben Adler","Dr. Grace Kim","Dr. Raj Menon","Dr. Ivy Brooks","Dr. Leo Grant","Dr. Mia Torres"];
+const st=["101 Oak St","22 Elm Ave","9 Pine Rd","400 Lake Blvd","77 Cedar Ln"];
+function luhnNPI(n){if(!/^\d{10}$/.test(n))return false;const s="80840"+n.slice(0,9);let sum=0;for(let i=0;i<s.length;i++){let d=+s[s.length-1-i];if(i%2===0){d*=2;if(d>9)d-=9}sum+=d}return (10-sum%10)%10===+n[9]}
+function mkNPI(seed){let b=String(1000000000+seed*7919%899999999).slice(0,9);for(let c=0;c<10;c++){if(luhnNPI(b+c))return b+c}}
+let provs=[],queue=[],audit=[],tracker=[],seq=0;
+let k=0;P.forEach((p,pi)=>{const n=[6,4,5][pi];for(let i=0;i<n;i++){provs.push({id:++seq,p:p.id,name:nm[k%nm.length],npi:mkNPI(k+3),addr:st[(k+pi)%5]+", "+p.mk,newPts:i%3!==0,flag:null});k++}});
+const acc={Austin:78,Tampa:64,Dallas:81};
+const now=()=>new Date().toLocaleTimeString([], {hour:'2-digit',minute:'2-digit'});
+function log(t,who){audit.unshift({t:now(),who,x:t});}
+function track(t){tracker.unshift(now()+" · "+t)}
+function tab(t){["story","prov","plan"].forEach(s=>{document.getElementById(s).classList.toggle("hide",s!==t);document.getElementById("t-"+s).classList.toggle("on",s===t)});t==="prov"?renderProv():t==="plan"&&renderPlan()}
+function r3(){const r=70+Math.random()*28,c=60+Math.random()*38,v=72+Math.random()*26;return{r:Math.round(r),c:Math.round(c),v:Math.round(v),s:Math.round((r+c+v)/3)}}
+const signals=[["address","Claims billed from a new address","300 Riverside Dr"],["left","No claims in 120 days + NPPES shows new employer",null],["newPts","Scheduling data: panel looks closed",false]];
+function trigger(){const cand=provs.filter(p=>!p.flag&&!p.left);if(!cand.length)return;const p=cand[Math.floor(Math.random()*cand.length)];const s=signals[Math.floor(Math.random()*3)];
+ p.flag={type:s[0],why:s[1],val:s[2]||(s[0]==="address"?"300 Riverside Dr, "+P.find(x=>x.id===p.p).mk:s[2])};
+ log(`Change detected for ${p.name}: ${s[1]}. Magic link sent to ${P.find(x=>x.id===p.p).name}.`,"MCheck monitor");track(`We noticed something new about ${p.name}. Please confirm.`);document.getElementById("practice").value=p.p;renderPlan();}
+function sevenDays(){const open=provs.filter(p=>p.flag&&!p.flag.answered);if(!open.length){alert("No open asks. Trigger a change first.");return}
+ open.forEach(p=>{p.flag.answered="ai";const conf=r3();queue.unshift({pid:p.id,change:p.flag.type==="left"?"Mark as left":describe(p),src:"AI voice call (disclosed as AI)",conf,state:"pending",removal:p.flag.type==="left"});log(`No reply in 7 days → Outreach Intelligence AI call verified ${p.name}.`,"Outreach Intelligence")});renderPlan()}
+function describe(p){return p.flag.type==="address"?"Address → "+p.flag.val:p.flag.type==="newPts"?"Not accepting new patients":"Change"}
+function decide(q){q.state=q.removal?"review":(q.conf.s>=+th.value?"auto":"review");if(q.state==="auto")apply(q,"Auto-approved (above threshold)")}
+function apply(q,how){const p=provs.find(x=>x.id===q.pid);if(q.removal)p.left=true;else if(p.flag?.type==="address")p.addr=p.flag.val;else if(p.flag?.type==="newPts")p.newPts=false;
+ p.flag=null;q.state="done";const mk=P.find(x=>x.id===p.p).mk;acc[mk]=Math.min(99,acc[mk]+3);
+ log(`${how}: ${p.name} · ${q.change}. Pushed to FACETS + directory (ETA <48h).`,"Plan system");track(`${p.name}: update accepted ✓ Live in Northwind's directory within 48 hours.`)}
+function renderProv(){const sel=document.getElementById("practice");if(!sel.options.length)P.forEach(p=>sel.add(new Option(p.name,p.id)));const pr=P.find(x=>x.id===sel.value);document.getElementById("prac-sub").textContent=pr.tin;
+ const list=provs.filter(p=>p.p===pr.id&&!p.left).sort((a,b)=>!!b.flag-!!a.flag);
+ document.getElementById("cards").innerHTML=list.map(p=>{if(p.flag&&!p.flag.answered){const q=p.flag.type==="left"?`Is ${p.name} still working at this practice?`:p.flag.type==="address"?`We think ${p.name} now sees patients at <b>${p.flag.val}</b>. Is that right?`:`Is ${p.name} still accepting new patients?`;
+  return `<div class="prov flag"><span class="pill p-warn">NEEDS A QUICK CHECK</span><div><b>${p.name}</b> · NPI ${p.npi}</div><div class="r3">Why we're asking: ${p.flag.why}</div><div class="q">${q}</div>
+  <div class="row"><button class="btn sm" onclick="answer(${p.id},'yes')">Yes, that's right</button><button class="btn sm ghost" onclick="fix(${p.id})">No, let me fix it</button></div><div id="fx${p.id}"></div></div>`}
+  return `<div class="prov"><span class="pill p-ok">LOOKS GOOD</span> <b>${p.name}</b><div class="muted">${p.addr} · ${p.newPts?"Accepting new patients":"Not accepting new patients"}</div><button class="btn sm ghost" style="margin-top:6px" onclick="markLeft(${p.id})">Mark as left</button></div>`}).join("");
+ document.getElementById("tracker").innerHTML=tracker.map(t=>`<div>${t}</div>`).join("")||'<div class="muted">No requests yet.</div>'}
+function answer(id,a,val){const p=provs.find(x=>x.id===id);p.flag.answered="office";if(val)p.flag.val=val;const conf=r3();if(a==="yes"){conf.s=Math.min(99,conf.s+8)}
+ const q={pid:id,change:p.flag.type==="left"?"Mark as left":describe(p),src:"Office confirmed (magic link)",conf,removal:p.flag.type==="left"};queue.unshift(q);decide(q);
+ log(`${P.find(x=>x.id===p.p).name} confirmed ${p.name}: ${q.change}. R3 ${conf.s}%.`,"Provider office");track(`Thanks! ${p.name}: ${q.state==="done"?"accepted ✓":"received, a Northwind analyst will check it"}.`);renderProv()}
+function fix(id){document.getElementById("fx"+id).innerHTML=`<input id="fa${id}" placeholder="Correct address"><button class="btn sm" onclick="sendFix(${id})">Send fix</button><div id="fm${id}"></div>`}
+function sendFix(id){const v=document.getElementById("fa"+id).value.trim();const m=document.getElementById("fm"+id);
+ if(!/^\d+\s+\w+/.test(v)){m.innerHTML='<div class="msg err">That address is missing a street number. Try "300 Riverside Dr, Austin".</div>';return}
+ const p=provs.find(x=>x.id===id);p.flag.type="address";answer(id,"fix",v)}
+function markLeft(id){const p=provs.find(x=>x.id===id);p.flag={type:"left",why:"Reported by your office",answered:"office"};const q={pid:id,change:"Mark as left",src:"Office reported",conf:r3(),removal:true};queue.unshift(q);decide(q);
+ log(`${p.name} reported as left. Sent to human review (removals are never auto-approved).`,"Provider office");track(`${p.name}: removal received, a Northwind analyst will confirm.`);renderProv()}
+function addProv(){const n=v("n-name"),npi=v("n-npi"),a=v("n-addr"),m=document.getElementById("add-msg");
+ if(!n||!a){m.innerHTML='<div class="msg err">Please add a name and an address.</div>';return}
+ if(!luhnNPI(npi)){m.innerHTML='<div class="msg err">That NPI doesn\'t check out. NPIs are 10 digits with a check digit. Copy it from the provider\'s NPPES record.</div>';return}
+ const pid=document.getElementById("practice").value;const p={id:++seq,p:pid,name:n,npi,addr:a,newPts:true,flag:{type:"add",answered:"office"}};provs.push(p);const q={pid:p.id,change:"Add new provider",src:"Office added",conf:r3(),removal:false};queue.unshift(q);decide(q);
+ m.innerHTML='<div class="msg ok">✓ NPI valid. Sent to Northwind.</div>';log(`New provider ${n} (NPI ${npi}) added by office.`,"Provider office");track(`${n}: added, ${q.state==="done"?"accepted ✓":"under review"}.`);["n-name","n-npi","n-addr"].forEach(i=>document.getElementById(i).value="");renderProv()}
+const v=i=>document.getElementById(i).value.trim();
+function act(i,ok){const q=queue[i];if(ok)apply(q,"Approved by analyst");else{q.state="rejected";const p=provs.find(x=>x.id===q.pid);p.flag=null;log(`Rejected by analyst: ${p.name} · ${q.change}. Office notified with reason.`,"Plan analyst");track(`${p.name}: we couldn't accept this change. Reason sent by email.`)}renderPlan()}
+function renderPlan(){queue.filter(q=>q.state==="pending").forEach(decide);
+ const det=audit.filter(a=>a.who==="MCheck monitor").length,conf=queue.length,auto=audit.filter(a=>a.x.startsWith("Auto-approved")).length,rev=queue.filter(q=>q.state==="review").length,avg=Math.round(Object.values(acc).reduce((a,b)=>a+b)/3);
+ document.getElementById("kpis").innerHTML=[["Records monitored",provs.filter(p=>!p.left).length],["Changes detected",det],["Confirmations received",conf],["Auto-approved",auto+" / "+conf],["Directory accuracy",avg+"%"]].map(([l,x])=>`<div class="card kpi"><div class="muted">${l}</div><div class="v">${x}</div></div>`).join("");
+ document.getElementById("queue").innerHTML=queue.map((q,i)=>{const p=provs.find(x=>x.id===q.pid);const s={auto:'<span class="pill p-ok">Auto-approved</span>',done:'<span class="pill p-ok">Approved</span>',review:'<span class="pill p-warn">Needs review</span>',rejected:'<span class="pill p-bad">Rejected</span>',pending:''}[q.state];
+  return `<tr><td><b>${p.name}</b><div class="r3">${q.src}</div></td><td>${q.change}${q.removal?' <span class="pill p-bad">Removal</span>':''}</td><td>${q.conf.s}%<div class="bar"><i style="width:${q.conf.s}%;background:${q.conf.s>=+th.value?'var(--blue)':'var(--orange)'}"></i></div><div class="r3">Rel ${q.conf.r} · Rec ${q.conf.c} · Rlv ${q.conf.v}</div></td><td>${s}</td><td>${q.state==="review"?`<button class="btn sm" onclick="act(${i},1)">Approve</button> <button class="btn sm ghost" onclick="act(${i},0)">Reject</button>`:''}</td></tr>`}).join("")||'<tr><td colspan="5" class="muted">Queue is empty. Click "Trigger a change" to start.</td></tr>';
+ document.getElementById("acc").innerHTML=Object.entries(acc).map(([m,x])=>`<div style="margin:8px 0"><div class="row" style="justify-content:space-between"><span>${m}</span><b>${x}%</b></div><div class="bar"><i style="width:${x}%;background:${x>=90?'var(--green)':x>=75?'var(--blue)':'var(--orange)'}"></i></div></div>`).join("")+'<p class="muted">Target ≥95% before plan-year 2028 CMS accuracy measurement.</p>';
+ document.getElementById("audit").innerHTML=audit.map(a=>`<div><b>${a.t}</b> · <span class="pill p-info">${a.who}</span> ${a.x}</div>`).join("")||'<div class="muted">Every change is logged here.</div>'}
+function exportCSV(){const rows=[["time","actor","event"],...audit.map(a=>[a.t,a.who,a.x])];const b=new Blob([rows.map(r=>r.map(c=>'"'+String(c).replace(/"/g,'""')+'"').join(",")).join("\n")],{type:"text/csv"});const u=URL.createObjectURL(b);const l=document.createElement("a");l.href=u;l.download="kite_audit_log.csv";l.click()}
+</script></body></html>
